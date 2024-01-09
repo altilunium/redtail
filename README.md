@@ -92,3 +92,11 @@ This script seems to be a set of commands executed in a Unix-like shell (like Ba
 ----
 
 Before that URL is unaccessible, I archived the `redtail.x86_64` executable here for research purposes.
+
+### So?
+
+I wish some security researchers could find out what these executables actually do. 
+
+Oh, I also managed to find another malware in the wild, similar to this : [jaws.exploit](https://github.com/altilunium/jaws.exploit). 
+
+All I have to do to get this one is by setting up a honeypot server with a publicly accessible IP.
