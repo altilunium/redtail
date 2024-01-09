@@ -119,4 +119,8 @@ It's not my faulty regex script. In fact, I just fail to properly render the `ac
 
 ![image](https://github.com/altilunium/redtail/assets/70379302/f6b99e3e-3e12-48b6-bbda-38e68937a883)
 
+### Epilogue 3 : 
 
+[CVE-2022-47945](https://nvd.nist.gov/vuln/detail/CVE-2022-47945)
+
+> ThinkPHP Framework before 6.0.14 allows local file inclusion via the lang parameter when the language pack feature is enabled (lang_switch_on=true). An unauthenticated and remote attacker can exploit this to execute arbitrary operating system commands, as demonstrated by including pearcmd.php.
