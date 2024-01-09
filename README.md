@@ -109,7 +109,7 @@ VirusTotal analysis of this `redtail.x86_64` file : [miner.bldbd/xmrig](https://
 
 ### Epilogue 2
 
-It's not my faulty regex script. In fact, I just fail to properly render it by using HTML. Here's the actual access.log line, shown by using simple grep.
+It's not my faulty regex script. In fact, I just fail to properly render the `access.log` file by using HTML. Here's the actual access.log line, shown by using simple grep.
 
 > grep "shell_exec" access.log
 
