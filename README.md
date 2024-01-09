@@ -101,9 +101,11 @@ Oh, I also managed to find another malware in the wild, similar to this : [jaws.
 
 All I have to do to get this one is by setting up a honeypot server with a publicly accessible IP.
 
+---
+
 ### Epilogue
 
-* VirusTotal analysis of this `redtail.x86_64` file : [miner.bldbd/xmrig](https://www.virustotal.com/gui/file/819f53b96bb5b8869531d3880b53cb5f354b2a2f5171e783bad495e1ac2cbbf0/detection)
+VirusTotal analysis of this `redtail.x86_64` file : [miner.bldbd/xmrig](https://www.virustotal.com/gui/file/819f53b96bb5b8869531d3880b53cb5f354b2a2f5171e783bad495e1ac2cbbf0/detection)
 
 ### Epilogue 2
 
